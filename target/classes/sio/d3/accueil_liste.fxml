@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.d3.ListeClimsController">
+    <children>
+
+        <ImageView onMouseClicked="#ajoutClimatiseur" fitWidth="50" preserveRatio="true">
+            <image>
+                <Image url="@images/add.png" />
+            </image>
+        </ImageView>
+
+        <TableView fx:id="listeGClims" layoutX="59.0" layoutY="55.0" prefHeight="500.0" prefWidth="100.0">
+            <columns>
+
+                <TableColumn fx:id="marque" prefWidth="100" text="Marque">
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property="marque"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="modele" prefWidth="100.0" text="Modèle">
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property="modele"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="puissance" prefWidth="100" text="Puissance">
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+
+                    <cellValueFactory>
+                        <PropertyValueFactory property="puissance"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="SurfaceMinCouverte" prefWidth="150" text="Surfaces Minimum Couverte">
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+
+                    <cellValueFactory>
+                        <PropertyValueFactory property="SurfaceMinCouverte"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="SurfaceMaxCouverte" prefWidth="150" text="Surfaces Maximum Couverte">
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+
+                    <cellValueFactory>
+                        <PropertyValueFactory property="SurfaceMaxCouverte"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+</VBox>

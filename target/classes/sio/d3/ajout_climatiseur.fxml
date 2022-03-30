@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.d3.AjoutClimController" stylesheets="@Style.css" styleClass="fond">
+    <children>
+     <HBox alignment="CENTER" spacing="20.0" styleClass="fondMarque">
+        <Label fx:id="marque" text="Marque: " />
+        <TextArea fx:id="valMarque"
+                  minHeight="16" maxHeight="30" minWidth="69" maxWidth="100"/>
+     </HBox>
+    </children>
+
+    <children>
+        <HBox alignment="CENTER" spacing="20.0" styleClass="fondModel">
+            <Label fx:id="modele" text="Modèle: " />
+            <TextArea fx:id="valModele"
+                      minHeight="16" maxHeight="30" minWidth="69" maxWidth="100"/>
+        </HBox>
+    </children>
+
+  <children>
+     <HBox alignment="CENTER" spacing="20.0" styleClass="fondPuissance">
+           <Label fx:id="puissance" text="Puissance (en BTU): " />
+           <TextArea fx:id="valPuissance"
+                     minHeight="16" maxHeight="30" minWidth="69" maxWidth="100"/>
+     </HBox>
+  </children>
+
+  <children>
+     <HBox alignment="CENTER" spacing="20.0" styleClass="fondBouton">
+        <Button  fx:id="primaryButton" text="Enregistrer" onAction="#handleButtonAction"/>
+     </HBox>
+  </children>
+
+</VBox>

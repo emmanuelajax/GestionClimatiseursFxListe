@@ -1,0 +1,19 @@
+.fondMarque{
+    -fx-background-color:cyan;
+}
+
+.fondPuissance{
+    -fx-background-color:red;
+}
+
+.fondBouton{
+    -fx-background-color:yellow;
+}
+
+.fond{
+    -fx-background-color:blue;
+}
+
+.fondModel{
+    -fx-background-color:green;
+}
