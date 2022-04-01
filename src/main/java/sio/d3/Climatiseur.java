@@ -12,12 +12,23 @@ public class Climatiseur {
     private StringProperty marque;
     private StringProperty modele;
     private IntegerProperty puissance;
+    private IntegerProperty surfaceMin;
+    private IntegerProperty surfaceMax;
 
     public Climatiseur(String marque, String modele, int puissance) {
         this.puissanceProperty().set(puissance);
         this.marqueProperty().set(marque);
         this.modeleProperty().set(modele);
     }
+    public Climatiseur(String marque, String modele, int puissance,int smi, int sma) {
+        this.puissanceProperty().set(puissance);
+        this.marqueProperty().set(marque);
+        this.modeleProperty().set(modele);
+        this.surfaceMinProperty().set(smi);
+        this.surfaceMaxProperty().set(sma);
+    }
+
+
 
     public int getSurfaceMaxCouverte() {
         switch (puissanceProperty().get()) {
@@ -103,6 +114,16 @@ public class Climatiseur {
     public IntegerProperty puissanceProperty() {
         if (puissance == null) puissance = new SimpleIntegerProperty(this, "puissance");
         return puissance;
+    }
+
+    public IntegerProperty surfaceMinProperty() {
+        if (surfaceMin == null) surfaceMin = new SimpleIntegerProperty(this, "surface Min");
+        return surfaceMin;
+    }
+
+    public IntegerProperty surfaceMaxProperty() {
+        if (surfaceMax == null) surfaceMax = new SimpleIntegerProperty(this, "surface Min");
+        return surfaceMax;
     }
 
     public int getPuissance() {

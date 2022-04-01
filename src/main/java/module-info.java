@@ -4,4 +4,6 @@ module sio.d3 {
 
     opens sio.d3 to javafx.fxml;
     exports sio.d3;
+    requires mysql.connector.java;
+    requires java.sql;
 }

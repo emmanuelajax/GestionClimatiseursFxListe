@@ -1,8 +1,6 @@
 package sio.d3;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

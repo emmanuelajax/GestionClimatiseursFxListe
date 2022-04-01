@@ -22,10 +22,13 @@ public class ListeClimsController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Initialiaze from ListClimController.");
+        Model.connect_to_database();
         //association du tableView avec la liste observable tout élément ajouter dans la
         // liste observable sera automatiquement ajouté au tableView tout élément
         // supprimer de la liste observable sera automatiquement supprimé du tableView
         listeGClims.setItems(Model.getClimatiseurs());
+
 
         //lors d'un double clic sur un item (ligne) du tableView,
         //on récupère le climatiseur sélectionne et on le supprime du modèle
