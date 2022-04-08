@@ -69,6 +69,7 @@ public class AjoutClimController
 
         //ajout du climatiseur dans la liste du climatiseur du modèle
         Model.getClimatiseurs().add(c);
+        Model.insertClimatiseur(c);
 
         //on revient à la fenêtre d'affichage de la liste de climatiseurs.
         GestionDesClimatiseurs.setRoot("accueil_liste"); }
