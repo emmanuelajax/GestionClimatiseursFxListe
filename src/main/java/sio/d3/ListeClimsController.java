@@ -41,14 +41,21 @@ public class ListeClimsController implements Initializable
                 //si on a pas effectué qu'un seul clic
                 if (event.getClickCount() > 1)
                 {
-                    //récupération du climatiseur sélectionné
-                    Climatiseur selectedItem;
-                    selectedItem = (Climatiseur)
-                            listeGClims.getSelectionModel().getSelectedItem();
+                    try {
 
-                    System.out.println("Suppression de l'item … ");
-                    //mise à jour du modèle
-                    Model.getClimatiseurs().remove(selectedItem);
+                        //récupération du climatiseur sélectionné
+                        Climatiseur selectedItem;
+                        selectedItem = (Climatiseur)
+                                listeGClims.getSelectionModel().getSelectedItem();
+
+                        System.out.println("Suppression de l'item … ");
+                        //mise à jour du modèle
+                        Model.getClimatiseurs().remove(selectedItem);
+                        Model.deleteClimatiseur(selectedItem);
+                    }catch (Exception se)
+                    {
+                        //s
+                    }
                 }
             }
         });
