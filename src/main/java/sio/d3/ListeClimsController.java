@@ -3,6 +3,7 @@ package sio.d3;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 
@@ -32,7 +33,7 @@ public class ListeClimsController implements Initializable
 
         //lors d'un double clic sur un item (ligne) du tableView,
         //on récupère le climatiseur sélectionne et on le supprime du modèle
-        listeGClims.setOnMouseClicked(new EventHandler<MouseEvent>()
+        /*listeGClims.setOnMouseClicked(new EventHandler<MouseEvent>()
         {
 
             @Override
@@ -58,7 +59,42 @@ public class ListeClimsController implements Initializable
                     }
                 }
             }
-        });
+        });*/
+    }
+
+    public void deleteClimListe(MouseEvent mouseEvent) {
+        try {
+
+            //récupération du climatiseur sélectionné
+            Climatiseur selectedItem;
+            selectedItem = (Climatiseur)
+                    listeGClims.getSelectionModel().getSelectedItem();
+
+            System.out.println("Suppression de l'item … ");
+            //mise à jour du modèle
+            Model.getClimatiseurs().remove(selectedItem);
+            Model.deleteClimatiseur(selectedItem);
+        }catch (Exception se)
+        {
+            //s
+        }
+
+    }
+
+    @FXML
+    private TableColumn marque;
+
+    public void modifClimatiseur(TableColumn.CellEditEvent cellEditEvent)
+    {
+        System.out.println("La valeur est modifiée pour : "+ cellEditEvent.getTableColumn().getText() +" = " + cellEditEvent.getNewValue().toString());
+        if (cellEditEvent.getTableColumn().getText().equals("Marque"))
+        {
+            String val = cellEditEvent.getNewValue().toString();
+            //récupération du climatiseur sélectionné
+            Climatiseur selectedItem = (Climatiseur) listeGClims.getSelectionModel().getSelectedItem();
+            selectedItem.setMarque(val);
+            Model.updateClimatiseur(selectedItem.getId(),val);
+        }
     }
 }
 

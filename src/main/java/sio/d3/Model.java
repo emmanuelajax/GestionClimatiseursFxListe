@@ -155,6 +155,11 @@ public class Model {
         }
 
     }
+
+    public static void updateClimatiseur(int id, String val)
+    {
+
+    }
 }
 
 

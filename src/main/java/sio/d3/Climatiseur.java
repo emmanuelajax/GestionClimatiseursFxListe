@@ -14,6 +14,7 @@ public class Climatiseur {
     private IntegerProperty puissance;
     private IntegerProperty surfaceMin;
     private IntegerProperty surfaceMax;
+    private int Id;
 
     public Climatiseur(String marque, String modele, int puissance) {
         this.puissanceProperty().set(puissance);
@@ -148,5 +149,9 @@ public class Climatiseur {
 
     public void setModele(String modele) {
         modeleProperty().setValue(modele);
+    }
+
+    public int getId() {
+        return Id;
     }
 }
